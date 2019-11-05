@@ -1,16 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
-  <title>Asset Management</title>
+    <title>Works ToDo</title>
+    <meta charset="UTF-8" />
+
 </head>
 
 <body>
-  <h1>Html Image</h1>
-  <div class="cat"></div>
 
-  <h1>Css backgound-images</h1>
-  <img src="images/cat.jpg" alt="" class="src" height="200">
+    <body>
+        <div class="main-block">
+            <a class="heading">Works TODO</a>
+
+            <div class="input-item-block">
+                <input class="input-item-field" placeholder="New item..." />
+                <button class="input-item-btn-add">Add</button>
+            </div>
+            <template id="input-list">
+          <div class="input-list"></div>
+        </template>
+
+            <template id="input-list-item">
+          <div class="input-list-item">
+            <div class="input-list-text"></div>
+            <button class="input-list-btn-remove">Remove</button>
+          </div>
+        </template>
+        </div>
+    </body>
+
 </body>
 
 </html>
