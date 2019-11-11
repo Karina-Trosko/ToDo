@@ -2,8 +2,6 @@ body {
     background: linear-gradient(to left, #4591e0, #3c59ae);
     display: flex;
     justify-content: center;
-    /* padding-left: 20%;
-    padding-right: 20%; */
 }
 
 .main-block {
@@ -26,8 +24,7 @@ body {
     height: 35px;
     display: flex;
     justify-content: space-between;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 0% 10%;
     margin-top: 5%;
 }
 
@@ -65,22 +62,14 @@ body {
     width: 80%;
     font-size: 26px;
     color: rgb(247, 247, 247);
-    padding-top: 10px;
-    padding-left: 20px;
+    padding: 10px 0px 0px 20px;
 }
 
 .input-list-btn-remove {
     background-color: #4591e0;
-    border-color: rgb(247, 247, 247);
     color: rgb(247, 247, 247);
     font-size: 15px;
     border: 2px solid rgb(247, 247, 247);
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 25px;
-    margin-left: 25px;
+    padding: 2px 15px 2px 15px;
+    margin: 10px 25px;
 }
