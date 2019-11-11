@@ -4,10 +4,6 @@ import {
     MAIN_BLOCK,
     INPUT_FIELD,
     INPUT_BTN_ADD,
-    INPUT_LIST,
-    INPUT_LIST_ID,
-    INPUT_LIST_ITEM_ID,
-    INPUT_LIST_ITEM,
     INPUT_LIST_ITEM_TEXT,
     INPUT_LIST_ITEM_BTN_REMOVE,
 
@@ -34,9 +30,10 @@ function addItemByKeydown(eventOfItem) {
 }
 
 function addItem() {
-    const listItem = getTemplateNode(INPUT_LIST_ITEM_ID, INPUT_LIST_ITEM);
-    //listItem.querySelector(INPUT_LIST_ITEM_TEXT).textContent = inputField.value;
-    listItem.querySelector(INPUT_LIST_ITEM_TEXT).textContent = getTodoListItem();
+    //const listItem = getTemplateNode(INPUT_LIST_ITEM_ID, INPUT_LIST_ITEM);
+    const listItem = getTodoListItem();
+    listItem.querySelector(INPUT_LIST_ITEM_TEXT).textContent = inputField.value;
+
 
     inputField.value = "";
     listItem
