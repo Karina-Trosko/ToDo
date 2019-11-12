@@ -1,13 +1,75 @@
-.hello {
-    color: red;
+body {
+    background: linear-gradient(to left, #4591e0, #3c59ae);
+    display: flex;
+    justify-content: center;
 }
 
-.cat {
-    height: 250px;
-    width: 300px;
-    background-image: url(../assets/cat.jpg);
-    background-color: #cccccc; /* Used if the image is unavailable */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+.main-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+}
+
+.heading {
+    color: rgb(247, 247, 247);
+    font-size: 45px;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.input-item-block {
+    width: 80%;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 10%;
+    margin-top: 5%;
+}
+
+.input-item-field {
+    width: 80%;
+    font-size: 24px;
+    color: rgb(112, 112, 112);
+    border: none;
+}
+
+.input-item-btn-add {
+    width: 15%;
+    background-color: #427bcc;
+    border: none;
+    color: rgb(247, 247, 247);
+    font-size: 25px;
+}
+
+.input-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.input-list-item {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #4591e0;
+    margin-top: 7px;
+}
+
+.input-list-text {
+    width: 80%;
+    font-size: 26px;
+    color: rgb(247, 247, 247);
+    padding: 10px 0px 0px 20px;
+}
+
+.input-list-btn-remove {
+    background-color: #4591e0;
+    color: rgb(247, 247, 247);
+    font-size: 15px;
+    border: 2px solid rgb(247, 247, 247);
+    padding: 2px 15px 2px 15px;
+    margin: 10px 25px;
 }
