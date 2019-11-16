@@ -12,10 +12,6 @@ const inputField = document.querySelector(INPUT_FIELD);
 const mainBlock = document.querySelector(MAIN_BLOCK);
 const inputList = getTodoList();
 
-mainBlock.append(inputList);
-btnAdd.addEventListener("click", addItem);
-inputField.addEventListener("keydown", addItemByKeydown);
-
 function addItemByKeydown(eventOfItem) {
     if (Number(eventOfItem.keyCode) === 13) { addItem(); }
 }
@@ -25,3 +21,7 @@ function addItem() {
     inputField.value = "";
     inputList.append(listItem);
 }
+
+mainBlock.append(inputList);
+btnAdd.addEventListener("click", addItem);
+inputField.addEventListener("keydown", addItemByKeydown);
