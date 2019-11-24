@@ -9,13 +9,34 @@ export default class TodoList {
 
     constructor() {
 
-        this._list = getNodeFromTemplate(templateList, INPUT_LIST);
+        this._node = getNodeFromTemplate(templateList, INPUT_LIST);
+        this._items = [];
 
     }
 
-    get list() {
+    add(item) {
 
-        return this._list;
+        this._items = [...this._items, item];
 
+        this.removeById = this.removeById.bind(this);
+        item.removeHandler = this.removeById;
+
+        this._node.append(item.node);
+
+    }
+    removeById(id) {
+
+        const removedItem = this._items.find(el => el.id === id);
+        this._items = this._items.filter(el => el.id !== id);
+        removedItem._node.remove();
+    }
+
+    get node() {
+
+        return this._node;
+
+    }
+    get items() {
+        return this._items;
     }
 }

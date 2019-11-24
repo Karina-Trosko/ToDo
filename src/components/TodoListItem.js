@@ -6,21 +6,44 @@ import { getNodeFromTemplate } from '../services/utils.js';
 
 export default class TodoListItem {
 
-    constructor({ value }) {
-        this._item = getNodeFromTemplate(TodoListItem._getTemplate(value), INPUT_LIST_ITEM);
-        this._removeButton = this._item.querySelector(INPUT_LIST_ITEM_BTN_REMOVE);
+    constructor({ value }, id) {
+        this._node = getNodeFromTemplate(this._getTemplate(value), INPUT_LIST_ITEM);
+        this._removeButton = this._node.querySelector(INPUT_LIST_ITEM_BTN_REMOVE);
 
-        this._removeButton.addEventListener("click", () => this._item.remove());
+        this._id = id;
+        this._value = value;
+        this._removeHandler = null;
+
+        this._remove = this._remove.bind(this);
+        this._removeButton.addEventListener("click", this._remove);
     }
 
-    static _getTemplate(value) {
+    _remove() {
+
+        this._removeHandler(this._id);
+
+    }
+
+    _getTemplate(value) {
         return `<div class="input-list-item">
         <div class="input-list-text">${value}</div>
         <button class="input-list-btn-remove">Remove</button>
         </div>`;
     }
 
-    get item() {
-        return this._item;
+    get id() {
+        return this._id;
+    }
+
+    get value() {
+        return this.value;
+    }
+
+    get node() {
+        return this._node;
+    }
+
+    set removeHandler(handler) {
+        this._removeHandler = handler;
     }
 }
