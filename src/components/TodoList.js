@@ -1,16 +1,21 @@
 import {
     INPUT_LIST,
+    INPUT_LIST_ITEM_BTN_REMOVE,
 } from '../const.js';
 import { templateList } from '../templates/TodoList.js';
 import { getNodeFromTemplate } from '../services/utils.js';
-
+import { save, getAll, removeByIdFromStorage, setCounter } from '../services/api.js';
+import TodoListItem from './TodoListItem.js';
 
 export default class TodoList {
 
     constructor() {
 
         this._node = getNodeFromTemplate(templateList, INPUT_LIST);
-        this._items = [];
+
+        this._items = getAll();
+
+        this.removeById = this.removeById.bind(this);
 
     }
 
@@ -18,17 +23,27 @@ export default class TodoList {
 
         this._items = [...this._items, item];
 
-        this.removeById = this.removeById.bind(this);
-        item.removeHandler = this.removeById;
+        this.loadItem(item);
+        let data = this._items.map(item => ({ value: item.value, id: item.id }));
 
-        this._node.append(item.node);
-
+        save(data);
+        setCounter(item.id);
     }
+
+    loadItem(item) {
+
+        item.removeHandler = this.removeById;
+        this._node.append(item.node);
+    }
+
     removeById(id) {
 
         const removedItem = this._items.find(el => el.id === id);
         this._items = this._items.filter(el => el.id !== id);
-        removedItem._node.remove();
+
+        document.querySelector("#i" + id).remove();
+        removeByIdFromStorage(id);
+
     }
 
     get node() {

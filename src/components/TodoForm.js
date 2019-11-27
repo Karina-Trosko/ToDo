@@ -25,22 +25,28 @@ export default class TodoForm {
     }
 
     _addItem() {
+
         const value = this._input.value;
+
         if (value !== "") {
+
             this._addItemHandler(value);
             this._input.value = "";
         }
     }
+
     _addItemByKeydown(eventOfItem) {
 
         if (Number(eventOfItem.keyCode) === 13) { this._addItem(); }
     }
 
     set addItemHandler(handler) {
+
         this._addItemHandler = handler;
     }
 
     get node() {
+
         return this._node;
     }
 }
