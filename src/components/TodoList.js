@@ -1,6 +1,7 @@
 import {
     INPUT_LIST,
     INPUT_LIST_ITEM_BTN_REMOVE,
+    INPUT_LIST_ITEM,
 } from '../const.js';
 import { templateList } from '../templates/TodoList.js';
 import { getNodeFromTemplate } from '../services/utils.js';
@@ -62,6 +63,25 @@ export default class TodoList {
     loadGroupOfItems(arr) {
 
         arr.forEach(item => this.loadItem(new TodoListItem(item, item.id)));
+    }
+
+
+    updateSearchList({ value }) {
+
+        this._items = value != "" ?
+            getAll().filter(item => item.value.toLowerCase().includes(value.toLowerCase())) :
+            getAll();
+
+        this.updateList();
+
+        this._indexStart = 19;
+        this._indexEnd = 29;
+    }
+
+    updateList() {
+
+        this._node.querySelectorAll(INPUT_LIST_ITEM).forEach(item => item.remove());
+        this.loadGroupOfItems(this._items.slice(0, 19));
     }
 
     get node() {

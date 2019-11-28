@@ -14,6 +14,8 @@ export default class Todo {
         this._todoList = new TodoList();
 
         this._todoForm.addItemHandler = value => this._todoList.add(new TodoListItem({ value }, (getCounter() + 1)));
+        this._todoForm.searchHandler = value => this._todoList.updateSearchList({ value });
+
         this._todoList._node.addEventListener('scroll', () => this._load());
 
         this._display();
@@ -23,6 +25,7 @@ export default class Todo {
     _display() {
 
         this._block.append(this._todoForm.node);
+        this._block.append(this._todoForm.searchBlock);
         this._todoList.loadGroupOfItems(this._todoList.items.slice(0, 19));
         this._block.append(this._todoList.node);
     }

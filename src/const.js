@@ -6,3 +6,5 @@ export const INPUT_LIST = ".input-list";
 export const INPUT_LIST_ITEM = ".input-list-item";
 export const INPUT_LIST_ITEM_TEXT = ".input-list-text";
 export const INPUT_LIST_ITEM_BTN_REMOVE = ".input-list-btn-remove";
+export const SEARCH_FIELD = ".search-item-field";
+export const SEARCH_BLOCK = ".search-block";
