@@ -17,6 +17,9 @@ export default class TodoList {
 
         this.removeById = this.removeById.bind(this);
 
+        this._indexStart = 19;
+        this._indexEnd = 29;
+
     }
 
     add(item) {
@@ -44,6 +47,21 @@ export default class TodoList {
         document.querySelector("#i" + id).remove();
         removeByIdFromStorage(id);
 
+    }
+    loadList() {
+
+        if (this._node.scrollHeight - (this._node.scrollTop + this._node.clientHeight) < 5) {
+
+            this.loadGroupOfItems(this._items.slice(this._indexStart, this._indexEnd));
+
+            this._indexStart = this._indexEnd;
+            this._indexEnd += 10;
+        }
+    }
+
+    loadGroupOfItems(arr) {
+
+        arr.forEach(item => this.loadItem(new TodoListItem(item, item.id)));
     }
 
     get node() {

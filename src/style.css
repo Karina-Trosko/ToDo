@@ -47,6 +47,8 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 5%;
+    height: 470px;
+    overflow: auto;
 }
 
 .input-list-item {
