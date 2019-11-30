@@ -1,0 +1,1 @@
+export const templateList = `<div class="input-list"></div>`;

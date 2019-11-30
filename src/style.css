@@ -31,8 +31,27 @@ body {
 .input-item-field {
     width: 80%;
     font-size: 24px;
-    color: rgb(112, 112, 112);
+    color: rgb(110, 110, 110);
     border: none;
+}
+
+.search-block {
+    display: flex;
+    justify-content: center;
+}
+
+.search-item-field {
+    width: 100%;
+    margin-top: 3%;
+    font-size: 24px;
+    color: rgb(247, 247, 247);
+    background-color: #4591e0;
+    border: none;
+}
+
+.search-item-field::placeholder {
+    font-size: 24px;
+    color: rgb(247, 247, 247);
 }
 
 .input-item-btn-add {
@@ -47,6 +66,8 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 5%;
+    height: 470px;
+    overflow: auto;
 }
 
 .input-list-item {
